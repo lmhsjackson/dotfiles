@@ -53,7 +53,7 @@ need_push () {
 rvm_prompt(){
   if $(which rvm &> /dev/null)
   then
-	  echo "%{$fg_bold[yellow]%}$(rvm tools identifier)%{$reset_color%}"
+	  echo "RVM:%{$fg[yellow]%}$(rvm tools identifier | sed 's/\(ruby-\)\(.*\)/\2/')%{$reset_color%}"
 	else
 	  echo ""
   fi
@@ -63,7 +63,7 @@ directory_name(){
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rvm_prompt) in $(directory_name) $(project_name_color)$(git_dirty) $(need_push)\n› '
+export PROMPT=$'\n$(directory_name) $(project_name_color)$(git_dirty) $(need_push) $(rvm_prompt)\n› '
 set_prompt () {
   export RPROMPT=""
 }
@@ -71,3 +71,4 @@ set_prompt () {
 precmd() {
   set_prompt
 }
+
