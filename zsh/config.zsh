@@ -34,10 +34,9 @@ setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
 zle -N newtab
-
-bindkey '^[^[[D' backward-word
+bindkey '^[[1;5D' backward-word
 bindkey '^[^[[C' forward-word
-bindkey '^[OH' beginning-of-line
+bindkey '^[OH' beginning-of-line # Home-key
 #bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
