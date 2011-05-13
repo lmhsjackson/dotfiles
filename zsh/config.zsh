@@ -35,5 +35,15 @@ setopt HIST_REDUCE_BLANKS
 
 zle -N newtab
 
+## teclas
+
+# control y flechas
 bindkey '^[[1;5D' emacs-backward-word
 bindkey '^[[1;5C' emacs-forward-word
+# delete and shift-delete
+bindkey '^[[3~'   delete-char-or-list
+bindkey '^[[3;5~' kill-word
+# home and end
+bindkey '^[OH'    beginning-of-line
+bindkey '^[OF'    end-of-line
+
