@@ -5,3 +5,5 @@
 *.swp
 \#*
 .yardoc/
+webrat.log
+config/database.yml
