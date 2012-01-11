@@ -1,3 +1,3 @@
-export EDITOR='emacs'
+export EDITOR='vi'
 export LESS='-R'
 
