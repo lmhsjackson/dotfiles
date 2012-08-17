@@ -7,3 +7,5 @@
 .yardoc/
 webrat.log
 config/database.yml
+.bundle/
+
