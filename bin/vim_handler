@@ -1,0 +1,21 @@
+#! /usr/bin/env ruby
+
+require 'uri'
+require 'cgi'
+full_path = ARGV[0]
+
+if full_path
+  full_path = CGI::unescape full_path
+  uri = URI::parse(full_path)
+  vim_params = "--remote-tab-silent"
+
+  if uri.query
+    params = CGI::parse(uri.query)
+    line = params["line"][0]
+  end
+
+  vim_params << " +#{line}" if line
+  vim_params << %Q[ "#{uri.path}"]
+end
+
+`gvim #{vim_params}`
