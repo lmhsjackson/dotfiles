@@ -1,11 +1,13 @@
-.DS_Store
-.svn
-.tissues
+# Editor files
 *~
 *.swp
 \#*
+
+# Generated
 .yardoc/
 webrat.log
-config/database.yml
-.bundle/
+/tags
+/doc/tags
 
+# Local config
+.bundle/
