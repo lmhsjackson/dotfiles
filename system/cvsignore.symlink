@@ -11,3 +11,4 @@ webrat.log
 
 # Local config
 .bundle/
+Session.vim
