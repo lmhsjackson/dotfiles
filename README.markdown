@@ -1,4 +1,4 @@
-# eloyesp dotfiles
+# jackson dotfiles
 
 Based on the Holman organiced dotfiles, this are addapted to my taste and
 specially to linux (Holman's are for Mac).
