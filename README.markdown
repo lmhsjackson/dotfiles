@@ -46,7 +46,7 @@ symlinked without extension into `$HOME` when you run `rake install`.
 ## install
 
 - make a simple backup of `~/.*`
-- `git clone git://github.com/holman/dotfiles ~/.dotfiles`
+- `git clone git://github.com/lmhsjackson/dotfiles ~/.dotfiles`
 - `cd ~/.dotfiles`
 - `rake install`
 - Modify `zsh/zshrc.symlink` as you like.
