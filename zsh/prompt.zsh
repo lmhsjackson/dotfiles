@@ -53,7 +53,7 @@ need_push () {
 rvm_prompt(){
   if $(which rvm &> /dev/null)
   then
-	  echo "RVM:%{$fg[yellow]%}$(rvm tools identifier | sed 's/\(ruby-\)\(.*\)/\2/')%{$reset_color%}"
+	  echo "RVM:%{$fg[yellow]%}$(rvm tools identifier | sed 's/\(ruby-\)\(.*\)/\2/')%{$reset_color%} $(hostname)"
 	else
 	  echo ""
   fi
