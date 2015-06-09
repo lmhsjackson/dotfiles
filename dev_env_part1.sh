@@ -1,6 +1,7 @@
 ### Adding ppa
 add-apt-repository ppa:synapse-core/ppa
 apt-add-repository ppa:chris-lea/redis-server
+add-apt-repository ppa:me-davidsansome/clementine
 sh -c "echo 'deb http://archive.canonical.com/ubuntu/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list" #for skype
 
 #chrome
@@ -13,7 +14,7 @@ apt-get update
 
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-apt-get -y install synapse google-chrome-stable git gitg vim zsh rake postgresql postgresql-contrib sqlite3 libsqlite3-dev redis-server skype gnupg2
+apt-get -y install synapse google-chrome-stable git gitg vim zsh rake postgresql postgresql-contrib sqlite3 libsqlite3-dev redis-server skype gnupg2 clementine
 
 # making zsh default shell
 chsh -s $(which zsh)
