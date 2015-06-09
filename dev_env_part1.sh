@@ -1,7 +1,7 @@
 ### Adding ppa
-add-apt-repository ppa:synapse-core/ppa
-apt-add-repository ppa:chris-lea/redis-server
-add-apt-repository ppa:me-davidsansome/clementine
+add-apt-repository -y ppa:synapse-core/ppa
+apt-add-repository -y ppa:chris-lea/redis-server
+add-apt-repository -y ppa:me-davidsansome/clementine
 sh -c "echo 'deb http://archive.canonical.com/ubuntu/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list" #for skype
 
 #chrome
