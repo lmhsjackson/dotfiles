@@ -1,7 +1,10 @@
 ### Adding ppa
-add-apt-repository -y ppa:synapse-core/ppa
-apt-add-repository -y ppa:chris-lea/redis-server
-add-apt-repository -y ppa:me-davidsansome/clementine
+add-apt-repository ppa:synapse-core/ppa
+apt-add-repository ppa:chris-lea/redis-server
+add-apt-repository ppa:me-davidsansome/clementine
+
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+
 sh -c "echo 'deb http://archive.canonical.com/ubuntu/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list" #for skype
 
 #chrome
@@ -14,7 +17,7 @@ apt-get update
 
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-apt-get -y install synapse google-chrome-stable git gitg vim zsh rake postgresql postgresql-contrib sqlite3 libsqlite3-dev redis-server skype gnupg2 clementine
+apt-get -y install synapse google-chrome-stable git gitg vim zsh rake postgresql postgresql-contrib sqlite3 libsqlite3-dev redis-server skype gnupg2 clementine nodejs
 
 # making zsh default shell
 chsh -s $(which zsh)
