@@ -13,7 +13,7 @@ rvm use 2.1.2 --default
 
 gem install rake
 gem install bundler
-gem install rails
+gem install rails --no-ri --no-rdoc
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim # Vundle for vim
 git clone git://github.com/lmhsjackson/dotfiles ~/.dotfiles
