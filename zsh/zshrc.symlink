@@ -1,3 +1,6 @@
+export NVM_DIR="/home/jackson/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
@@ -17,7 +20,11 @@ fi
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
+esc
+export PATH=$HOME/local/imagemagick/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/local/imagemagick/lib:$LD_LIBRARY_PATH
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+eval "$(direnv hook zsh)"

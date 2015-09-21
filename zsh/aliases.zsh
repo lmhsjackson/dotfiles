@@ -7,8 +7,10 @@ alias ll="ls -l"
 alias la="ll --almost-all"
 
 # My personal alias
+alias rs='bin/rails s'
 alias rt='rake test'
 alias be='bundle exec'
 alias si='sudo apt-get install'
 alias sr='sudo apt-get remove --purge'
 alias esc='xmodmap ~/.xmodmap'
+alias rebinstub='bundle exec rake rails:update:bin && bundle exec spring binstub --all'
