@@ -8,7 +8,8 @@ alias la="ll --almost-all"
 
 # My personal alias
 alias rs='bin/rails s'
-alias rt='rake test'
+alias rc='bin/rails c'
+alias rt='bin/rspec '
 alias be='bundle exec'
 alias si='sudo apt-get install'
 alias sr='sudo apt-get remove --purge'
