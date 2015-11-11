@@ -5,19 +5,12 @@ add-apt-repository ppa:me-davidsansome/clementine
 
 curl -sL https://deb.nodesource.com/setup | sudo bash -
 
-sh -c "echo 'deb http://archive.canonical.com/ubuntu/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list" #for skype
-
-#chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-
-
 #add all the ppa above this line :)
 apt-get update
 
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-apt-get -y install synapse google-chrome-stable git gitg vim zsh rake postgresql postgresql-contrib sqlite3 libsqlite3-dev redis-server skype gnupg2 clementine nodejs
+apt-get -y install google-chrome-stable git synapse vim zsh rake postgresql postgresql-contrib sqlite3 libsqlite3-dev redis-server skype gnupg2 mocp nodejs
 
 # making zsh default shell
 chsh -s $(which zsh)
