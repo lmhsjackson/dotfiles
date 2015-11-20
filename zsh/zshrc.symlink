@@ -24,6 +24,7 @@ esc
 export PATH=$HOME/local/imagemagick/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/local/imagemagick/lib:$LD_LIBRARY_PATH
 
+source ~/.todos/init.sh
 eval "$(direnv hook zsh)"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source ~/.todos/init.sh
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
