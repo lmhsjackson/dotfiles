@@ -13,9 +13,12 @@
 #fi
 
 # The rest of my fun git aliases
+alias gst='git stash --include-untracked'
+alias galias='cat ~/.dotfiles/git/aliases.zsh'
 alias gl='git pull --rebase --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp='git push origin HEAD'
+alias gf='git fetch --all'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gc='git commit'
@@ -25,3 +28,6 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gbd="git branch --merged | grep -v master | grep -v '*' | xargs git branch -d"
+alias gw="git add --all && git commit -m 'WIP'"
+alias guw="git reset HEAD~1"
+
