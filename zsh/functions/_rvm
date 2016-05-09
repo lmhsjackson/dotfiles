@@ -1,1 +1,2 @@
-../../../.rvm/scripts/zsh/Completion/_rvm
+-#compdef rvm
+-_files -W ~ -/
