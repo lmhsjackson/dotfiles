@@ -11,20 +11,26 @@ set autoread
 set number
 " Mappings
 
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
 map <Esc><Esc> :q <CR>
+
 map <F2> :NERDTreeToggle <CR>
 map <F3> :Ag 
 map <F4> :Rake <CR>
 map <F5> :w <CR>
-map <F6> :Gstatus <CR>
+map ` :Gstatus <CR>
 map <F8> Ibinding.pry<CR><Esc><F5>
 map <F9> Idebugger;<CR><Esc><F5>
 map <F10> Isave_and_open_page<CR><Esc><F5>
 map <Space> /
 map ñ :
 map <Tab> $
-map <C-k> 5k
-map <C-j> 5j
+map <C-z> :Emodel 
+map <C-c> :Econtroller  
 map ' :vs<CR>
 map ; :sp<CR>
 map 0 :Gd<CR>
@@ -44,13 +50,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Good looking bottom :)
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
@@ -64,6 +71,7 @@ Plugin 'tomasr/molokai'
 call vundle#end()            " required
 
 " Snippets config
+let g:rspec_command='!bin/rspec {spec}'
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -107,3 +115,4 @@ set laststatus=2
 
 set runtimepath^=~/.vim/bundle/ag
 let g:ag_working_path_mode="r"
+set runtimepath^=~/.vim/bundle/ag
