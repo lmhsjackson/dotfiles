@@ -5,14 +5,15 @@ alias reload!='. ~/.zshrc'
 alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ll --almost-all"
+alias e="vim"
 
 # My personal alias
-alias rs='bin/rails s'
-alias rc='bin/rails c'
-alias rt='bin/rspec '
+alias kill_spring="kill -9 $(ps -ef | grep spring | grep -v grep | awk '{print $2}')"
+alias rs='rails s'
+alias rc='rails c'
+alias rt='rspec '
 alias be='bundle exec'
 alias si='sudo apt-get install'
-alias sr='sudo apt-get remove --purge'
 # alias tmux='TERM=screen-256color-bce tmux'
 alias pairing='tmux new -s pairing'
 alias esc='xmodmap ~/.xmodmap'

@@ -50,6 +50,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Good looking bottom :)
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'slim-template/vim-slim'
@@ -60,7 +61,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'oplatek/Conque-Shell'
