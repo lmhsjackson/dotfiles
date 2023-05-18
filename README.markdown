@@ -1,14 +1,9 @@
 # jackson dotfiles
 
-Based on the Holman organiced dotfiles, this are addapted to my taste and
-specially to linux (Holman's are for Mac).
-
-## what makes this special?
-
-The idea is that this should work in fedora, ubuntu and debian. I use fedora
-the most, but I use Debian and ubuntu also.
-It should be less invasive (I will erase non essencial aliases so you can make
-your own).
+Currently using (would be nice to integrate)
+- https://github.com/zsh-git-prompt/zsh-git-prompt
+- rbenv
+- Vundle/pathogen
 
 ## dotfiles
 
@@ -16,13 +11,12 @@ Your dotfiles are how you personalize your system. These are mine.
 This dotfiles are designed to work with:
 * Fedora 14 | Debian stable | ubuntu stable.
 * zsh
-* RVM (Ruby Version Manager)
-* Rails >=3.
+* Rails >=5.
 * git
-* vim (this is not really true).
+* vim
 
 If you match up along most of those lines, you could fork my dotfiles try them
-and work whit me (or us) making this better.
+and work with me (or us) making this better.
 
 ## Organization
 
