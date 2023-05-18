@@ -1,5 +1,18 @@
+# git colors and commit info in zsh prompt
+source /home/jackson/projects/zsh-git-prompt/zshrc.sh
+
+PROMPT='%B%~%b$(git_super_status) '
+# RPROMPT="[%D{%y/%m/%f}|%D{%L:%M:%S}]"
+
+alias stagtun='ssh -L 5433:exchange-staging.db.internal.:5432 josepiccioni@bastion.tedo.io -N -i ./josepiccioni'
 export NVM_DIR="/home/jackson/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# kubernetes alias for exchange
+alias kube="sudo docker run --rm -it -v $HOME/.aws:/root/.aws -v $HOME/mount -e AWS_PROFILE=tevo-old 438589003462.dkr.ecr.us-east-1.amazonaws.com/kinnell:local"
+alias binup='sudo docker compose -f ./docker-compose.yml -f ./docker-compose.linux.yml up web'
+alias rc='kube console exchange staging'
+
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles

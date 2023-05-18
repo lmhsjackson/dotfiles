@@ -9,31 +9,44 @@ set softtabstop=2
 set nu
 set autoread
 set number
+
 " Mappings
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+vmap <Leader>y :w !xclip -selection clipboard<CR><CR>
+" vmap <Leader>p "*p<CR>
 
 map <Esc><Esc> :q <CR>
+map >  :vertical res +10 <CR>
+map <  :vertical res -10 <CR>
+map +  :res +5 <CR>
+map -  :res -5 <CR>
 
 map <F2> :NERDTreeToggle <CR>
-map <F3> :Ag 
-map <F4> :Rake <CR>
-map <F5> :w <CR>
-map ` :Gstatus <CR>
-map <F8> Ibinding.pry<CR><Esc><F5>
+map <F3> :Ag --ignore-dir app/assets/  
+map <F4> :sudo ./bin/test shellescape(expand('%'))<CR>
+map <F5> <Esc>:w <CR>
+map ` :G <CR>
+map <F8> <Esc>Ibinding.pry<CR><Esc><F5>
 map <F9> Idebugger;<CR><Esc><F5>
 map <F10> Isave_and_open_page<CR><Esc><F5>
 map <Space> /
 map ñ :
 map <Tab> $
-map <C-z> :Emodel 
-map <C-c> :Econtroller  
+map 0 :Gdiff<CR>
+map <C-t> :tabnew<cr><F2>
+map <C-f> :%s/search/replace/gc
+" map <C-x><up> :tabr<cr>
+" map <C-x><down> :tabl<cr>
+" map <C><left> :tabp<cr>
+" map <C><right> :tabn<cr>
+map <C-c> :G commit<CR> 
+map <C-x> :Emodel 
 map ' :vs<CR>
 map ; :sp<CR>
-map 0 :Gd<CR>
 
 imap <F5> <Esc><F5>
 imap <F9> <Esc><F9>
@@ -42,13 +55,27 @@ nmap <C-Left> <C-W>h
 nmap <C-Down> <C-W>j
 nmap <C-Up> <C-W>k
 nmap <C-Right> <C-W>l
+nmap <C-i> <C-^>
+
+" Add new line and go back to normal mode.
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+
+" nnoremap <C-Left> :tabprevious<CR>
+" nnoremap <C-Right> :tabnext<CR>
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+" for ctags: remember to run ctags -R on the dir
+" ctags is the thing that lets you jup to definition with ctrl + ]
+set tags=tags
+" set rtp+=/home/jackson/.dotfiles/vim/snips
 
 " Plugins
 call vundle#begin()
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'Yggdroot/indentLine'
 " Good looking bottom :)
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -57,30 +84,35 @@ Plugin 'slim-template/vim-slim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
+" fugitive is the git wrapper
 Plugin 'tpope/vim-fugitive'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/syntastic'
-" Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
+" Plugin 'honza/vim-snippets'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'oplatek/Conque-Shell'
 Plugin 'pangloss/vim-javascript'
-
+Plugin 'rking/ag.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'wesQ3/vim-windowswap'
 "theme
 Plugin 'tomasr/molokai'
 call vundle#end()            " required
 
 " Snippets config
-let g:rspec_command='!bin/rspec {spec}'
-let g:syntastic_ruby_checkers = ['rubocop']
+let g:rspec_command='!bundle exec rspec {spec}'
+" let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checkers = ['eslint']
+
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 "put snips on dotfile folder
-"let g:UltiSnipsSnippetsDir="~/.dotfiles/vim/snips"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:tex_flavor = 'latex'
 
 "comment unless pathogen installed
 execute pathogen#infect()
@@ -98,12 +130,21 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Configs to make Molokai look great
-set background=dark
-let g:molokai_original=1
-let g:rehash256=1
-set t_Co=256
-colorscheme molokai
+" "----------SOLARIZED------------------
+" JUST USE TERMINAL SOLARIZED AND DISABLE MOLOKAI HERE
+" ALSO SET BACKGROUND TO DARK AND TERMINAL TO SOLARIZED DARK
+" same for light
+
+" "----------MOLOKAI--------------------
+" " Configs to make Molokai look great
+" set background=dark
+" let g:molokai_original=1
+" let g:rehash256=1
+" set t_Co=256
+" colorscheme molokai
+"----------MOLOKAI--------------------
+
+
 " Show trailing whitespace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
