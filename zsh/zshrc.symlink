@@ -10,7 +10,7 @@ export NVM_DIR="/home/jackson/.nvm"
 
 # kubernetes alias for exchange
 alias kube="sudo docker run --rm -it -v $HOME/.aws:/root/.aws -v $HOME/mount -e AWS_PROFILE=tevo-old 438589003462.dkr.ecr.us-east-1.amazonaws.com/kinnell:local"
-alias binup='sudo docker compose -f ./docker-compose.yml -f ./docker-compose.linux.yml up web'
+alias rs='sudo docker compose -f ./docker-compose.yml -f ./docker-compose.linux.yml up web'
 alias rc='kube console exchange staging'
 
 
@@ -33,7 +33,6 @@ fi
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
-esc
 #export PATH=$HOME/local/imagemagick/bin:$PATH
 #export LD_LIBRARY_PATH=$HOME/local/imagemagick/lib:$LD_LIBRARY_PATH
 

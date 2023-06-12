@@ -9,7 +9,7 @@ alias e="vim"
 
 # My personal alias
 alias kill_spring="kill -9 $(ps -ef | grep spring | grep -v grep | awk '{print $2}')"
-alias rs='rails s'
+# alias rs='rails s'
 # alias rc='rails c'
 alias rt='rspec '
 alias be='bundle exec'
