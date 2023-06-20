@@ -12,6 +12,7 @@ export NVM_DIR="/home/jackson/.nvm"
 alias kube="sudo docker run --rm -it -v $HOME/.aws:/root/.aws -v $HOME/mount -e AWS_PROFILE=tevo-old 438589003462.dkr.ecr.us-east-1.amazonaws.com/kinnell:local"
 alias rs='sudo docker compose -f ./docker-compose.yml -f ./docker-compose.linux.yml up web'
 alias rc='kube console exchange staging'
+alias e='vim'
 
 
 # shortcut to this dotfiles path is $ZSH

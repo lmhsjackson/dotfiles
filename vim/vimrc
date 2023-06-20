@@ -16,8 +16,8 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-vmap <Leader>y :w !xclip -selection clipboard<CR><CR>
-" vmap <Leader>p "*p<CR>
+map <C-c> "+y
+map <Leader>c "+yiwy<CR>
 
 map <Esc><Esc> :q <CR>
 map >  :vertical res +10 <CR>
@@ -26,7 +26,7 @@ map +  :res +5 <CR>
 map -  :res -5 <CR>
 
 map <F2> :NERDTreeToggle <CR>
-map <F3> :Ag --ignore-dir app/assets/  
+map <F3> :Ag --ignore-dir {app/assets/  spec/cassettes}
 map <F4> :sudo ./bin/test shellescape(expand('%'))<CR>
 map <F5> <Esc>:w <CR>
 map ` :G <CR>
@@ -39,14 +39,18 @@ map <Tab> $
 map 0 :Gdiff<CR>
 map <C-t> :tabnew<cr><F2>
 map <C-f> :%s/search/replace/gc
+
+"move lines up and down
+map <C-k> :m -2<cr>
+map <C-j> :m +1<cr>
+
 " map <C-x><up> :tabr<cr>
 " map <C-x><down> :tabl<cr>
 " map <C><left> :tabp<cr>
 " map <C><right> :tabn<cr>
-map <C-c> :G commit<CR> 
 map <C-x> :Emodel 
-map ' :vs<CR>
-map ; :sp<CR>
+map ; :vs<CR>
+map ' :sp<CR>
 
 imap <F5> <Esc><F5>
 imap <F9> <Esc><F9>
@@ -63,6 +67,9 @@ nnoremap <Leader>O O<Esc>
 
 " nnoremap <C-Left> :tabprevious<CR>
 " nnoremap <C-Right> :tabnext<CR>
+
+" ignore on ctrl-p
+set wildignore+=*/cassettes/*
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -114,6 +121,17 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:tex_flavor = 'latex'
 
+" rubocop vim
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" rubocop vim end
+
 "comment unless pathogen installed
 execute pathogen#infect()
 
@@ -154,6 +172,7 @@ set nu
 let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 set laststatus=2
+
 
 set runtimepath^=~/.vim/bundle/ag
 let g:ag_working_path_mode="r"
